@@ -157,8 +157,15 @@ function processContains(item, list, callback) {
  * [2] Invoking `processDuplicateFree` passing `[1,1,2,2,3]` and `(arr) => arr.length`,
  * should return 3.
 */
-function processDuplicateFree(/* CODE HERE ONLY AFTER COMPLETING ALL OTHER TASKS */) {
-  /* CODE HERE ONLY AFTER COMPLETING ALL OTHER TASKS */
+function processDuplicateFree(list, callback) {
+  let deDup = []
+  return callback (deDup = [...new Set(list)]);
+  
+  // return callback(  
+  //   deDup = list.filter(function(array, index) {
+  //     list.indexOf(array) === index;
+  //   })
+  // );
 }
 
 /////////////// HIGHER-ORDER ARRAY METHODS ///////////////
@@ -254,7 +261,8 @@ function counterMaker() {
   function counter() {
     ++count;
     return count;
-  }
+  };
+
   return counter;
   
   // BROKEN CODE ENDS
@@ -282,9 +290,9 @@ function counterMaker() {
 */
 function counterMakerWithLimit(initialValue) {
   let count = initialValue;
-  function counter() {
-    ++count;
+  function counter() {  
     if (count < 3) {
+    ++count;
     return count;
     }
     else {
